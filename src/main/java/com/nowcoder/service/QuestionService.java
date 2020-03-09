@@ -17,7 +17,7 @@ public class QuestionService {
     SensitiveService sensitiveService;
 
     public int addQuestion(Question question) {
-        //html文本过滤
+        //html文本过滤（title和comment过滤）过滤脚本
         question.setTitle(HtmlUtils.htmlEscape(question.getTitle()));
         question.setContent(HtmlUtils.htmlEscape(question.getContent()));
         //敏感词过滤

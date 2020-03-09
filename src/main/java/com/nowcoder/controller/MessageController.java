@@ -45,6 +45,7 @@ public class MessageController {
         for (Message message : conversationList) {
             ViewObject vo = new ViewObject();
             vo.set("message", message);
+            //targetID是和自己聊天的对方ID
             int targetId = message.getFromId() == localUserId ? message.getToId() : message.getFromId();
             vo.set("user", userService.getUser(targetId));
             vo.set("unread", messageService.getConversationUnreadCount(localUserId, message.getConversationId()));

@@ -60,7 +60,7 @@ public class Message {
     }
 
     public String getConversationId() {
-        if (fromId < toId) {
+        if (fromId < toId) {//将小的id放在前面，保证两个人会话对应的ConversationId是一样的
             return String.format("%d_%d", fromId, toId);
         } else {
             return String.format("%d_%d", toId, fromId);

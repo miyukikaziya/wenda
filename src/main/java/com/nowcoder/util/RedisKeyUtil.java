@@ -1,5 +1,7 @@
 package com.nowcoder.util;
-
+/*
+* 生成Redis的key，防止重复
+ */
 public class RedisKeyUtil {
     private static String SPLIT = ":";
     private static String BIZ_LIKE = "LIKE";

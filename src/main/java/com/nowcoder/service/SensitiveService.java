@@ -18,7 +18,7 @@ public class SensitiveService implements InitializingBean {
 
     private static final Logger logger = LoggerFactory.getLogger(SensitiveService.class);
 
-    @Override
+    @Override//读取敏感词文件resources/SensitiveWords.txt
     public void afterPropertiesSet() throws Exception {
         InputStream is = null;
         InputStreamReader reader = null;
@@ -58,6 +58,7 @@ public class SensitiveService implements InitializingBean {
         }
     }
 
+    //构造敏感词前缀树
     private class TireNode {
         private boolean end = false; //是不是关键词的结尾
 
@@ -82,11 +83,13 @@ public class SensitiveService implements InitializingBean {
 
     private TireNode rootNode = new TireNode();
 
+    //判断是否为符号，符号会被过滤
     private boolean isSymbol(char c) {
         int ic = (int) c;
-        return !CharUtils.isAsciiAlphanumeric(c) && (ic < 0x2E80 || ic > 0x9FFF);
+        return !CharUtils.isAsciiAlphanumeric(c) && (ic < 0x2E80 || ic > 0x9FFF);//东亚文字
     }
 
+    //用***代替敏感词，三个指针，begin，position，tempNode
     public String filter(String text) {
         if (StringUtils.isBlank(text)) {
             return text;
@@ -122,10 +125,10 @@ public class SensitiveService implements InitializingBean {
                 position++;
             }
         }
-        result.append(text.substring(begin));
+        result.append(text.substring(begin));//最后一串
         return result.toString();
     }
-
+    //单元测试
     public static void main(String[] args) {
         SensitiveService s = new SensitiveService();
         s.addWord("色情");

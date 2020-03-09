@@ -9,9 +9,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ThreadTest {
 
     public static void main(String[] args) {
-//        test();
-//        testExecutor();
-        testAtomic();
+        //test();    //test BlockingQueue
+        testExecutor();
+//        testAtomic();
     }
 
     private static int count = 0;
@@ -37,9 +37,9 @@ public class ThreadTest {
     }
 
     public static void testExecutor() {
-        ExecutorService service1 = Executors.newSingleThreadExecutor(); //单线程
-        ExecutorService service2 = Executors.newFixedThreadPool(2);
-        service2.submit(new Runnable() {
+        //ExecutorService service = Executors.newSingleThreadExecutor(); //单线程
+        ExecutorService service = Executors.newFixedThreadPool(2);//两条线程
+        service.submit(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -52,7 +52,7 @@ public class ThreadTest {
                 }
             }
         });
-        service2.submit(new Runnable() {
+        service.submit(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -66,10 +66,11 @@ public class ThreadTest {
             }
         });
 
-        service1.shutdown(); //等到前面线程任务执行完后关闭
-        service2.shutdown();
+        service.shutdown(); //等到前面线程任务执行完后关闭
+        //service2.shutdown();
     }
 
+    //test BlockingQueue
     public static void test() {
         BlockingQueue<String > q = new ArrayBlockingQueue<>(10);
         new Thread(new Producer(q)).start();
@@ -77,7 +78,7 @@ public class ThreadTest {
         new Thread(new Consumer(q), "Consumer2").start();
     }
 }
-
+//消费者线程
 class Consumer implements Runnable {
 
     private BlockingQueue<String> q = null;
@@ -97,7 +98,7 @@ class Consumer implements Runnable {
         }
     }
 }
-
+//生产者线程
 class Producer implements Runnable {
 
     private BlockingQueue<String> q = null;

@@ -36,6 +36,7 @@ public class QuestionController {
     @Autowired
     FollowService followService;
 
+    //传入title和content两个参数
     @RequestMapping(value = "/question/add", method = RequestMethod.POST)
     @ResponseBody
     public String addQuestion(@RequestParam("title") String title,
@@ -46,14 +47,14 @@ public class QuestionController {
             question.setContent(content);
             question.setCommentCount(0);
             question.setCreatedDate(new Date());
-            if (hostHolder.getUser() == null) {
+            if (hostHolder.getUser() == null) {//赋值一个匿名用户、默认用户
 //                question.setUserId(WendaUtil.ANONYMOUS_USERID);
                 return WendaUtil.getJSONString(999);
             } else {
                 question.setUserId(hostHolder.getUser().getId());
             }
             if (questionService.addQuestion(question) > 0) {
-                return WendaUtil.getJSONString(0);
+                return WendaUtil.getJSONString(0);//成功返回0
             }
         } catch (Exception e) {
             logger.error("增加提问失败," + e.getMessage());

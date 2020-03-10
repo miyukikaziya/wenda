@@ -29,7 +29,7 @@ public class FeedController {
 
     @Autowired
     JedisAdapter jedisAdapter;
-
+    //拉模式
     @RequestMapping(path = {"/pullfeeds"}, method = {RequestMethod.GET})
     private String getPullFeeds(Model model) {
         int localUserId = hostHolder.getUser() == null ? 0 : hostHolder.getUser().getId();
@@ -41,7 +41,7 @@ public class FeedController {
         model.addAttribute("feeds", feeds);
         return "feeds";
     }
-
+    //推模式
     @RequestMapping(path = {"/pushfeeds"}, method = {RequestMethod.GET})
     private String getPushFeeds(Model model) {
         int localUserId = hostHolder.getUser() == null ? 0 : hostHolder.getUser().getId();

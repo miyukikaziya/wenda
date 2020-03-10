@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface EventHandler {
     void doHandler(EventModel model);
-    List<EventType> getSupportEventTypes();
+    List<EventType> getSupportEventTypes();//自己关注哪些EventTypes
 }

@@ -24,12 +24,13 @@ public class EventConsumer implements InitializingBean, ApplicationContextAware 
 
     @Autowired
     JedisAdapter jedisAdapter;
-
+    //获取EventType及其对应的EventHandler List
     private Map<EventType, List<EventHandler>> config = new HashMap<>();
     private ApplicationContext applicationContext;
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        //找到所有的EventHandler
         Map<String, EventHandler> beans = applicationContext.getBeansOfType(EventHandler.class);
         if (beans != null) {
             for (Map.Entry<String, EventHandler> entry : beans.entrySet()) {
@@ -39,7 +40,7 @@ public class EventConsumer implements InitializingBean, ApplicationContextAware 
                     if (!config.containsKey(type)) {
                         config.put(type, new ArrayList<EventHandler>());
                     }
-                    config.get(type).add(entry.getValue());
+                    config.get(type).add(entry.getValue());//和自己关联起来
                 }
             }
         }
@@ -53,7 +54,7 @@ public class EventConsumer implements InitializingBean, ApplicationContextAware 
                     if (!message.equals(key)) {
                         continue;
                     }
-                    EventModel eventModel = JSON.parseObject(message, EventModel.class);
+                    EventModel eventModel = JSON.parseObject(message, EventModel.class);//反序列化
                     if (!config.containsKey(eventModel.getType())) {
                         logger.error("不能识别的事件");
                         continue;

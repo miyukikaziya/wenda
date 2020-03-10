@@ -9,8 +9,8 @@
         <module name="wenda" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="wenda" target="11" />
+    <bytecodeTargetLevel target="8">
+      <module name="wenda" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

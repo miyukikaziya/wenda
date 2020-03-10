@@ -6,9 +6,9 @@ import java.util.Map;
 public class EventModel {
     private EventType type;
     private int actorId;
-    private int entityType;
+    private int entityType;//触发对象
     private int entityId;
-    private int entityOwnerId;
+    private int entityOwnerId;//触发对象相关的用户
 
     private Map<String, String> exts = new HashMap<>();
 

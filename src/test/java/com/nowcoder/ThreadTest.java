@@ -37,9 +37,9 @@ public class ThreadTest {
     }
 
     public static void testExecutor() {
-        //ExecutorService service = Executors.newSingleThreadExecutor(); //单线程
-        ExecutorService service = Executors.newFixedThreadPool(2);//两条线程
-        service.submit(new Runnable() {
+        ExecutorService service1 = Executors.newSingleThreadExecutor(); //单线程
+        ExecutorService service2 = Executors.newFixedThreadPool(2);//两条线程
+        service2.submit(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -52,7 +52,7 @@ public class ThreadTest {
                 }
             }
         });
-        service.submit(new Runnable() {
+        service2.submit(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -66,8 +66,8 @@ public class ThreadTest {
             }
         });
 
-        service.shutdown(); //等到前面线程任务执行完后关闭
-        //service2.shutdown();
+        service1.shutdown(); //等到前面线程任务执行完后关闭
+        service2.shutdown();
     }
 
     //test BlockingQueue

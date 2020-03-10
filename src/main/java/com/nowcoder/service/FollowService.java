@@ -48,7 +48,7 @@ public class FollowService {
         }
         return Ids;
     }
-
+    //关注者
     public List<Integer> getFollowers(int entityType, int entityId, int count) {
         String followerKey = RedisKeyUtil.getFollowerKey(entityType, entityId);
         return getIdsFromSet(jedisAdapter.zrevrange(followerKey, 0, count));
@@ -58,7 +58,7 @@ public class FollowService {
         String followerKey = RedisKeyUtil.getFollowerKey(entityType, entityId);
         return getIdsFromSet(jedisAdapter.zrevrange(followerKey, offset, offset + count));
     }
-
+    //关注粉丝
     public List<Integer> getFollowees(int entityType, int entityId, int count) {
         String followeeKey = RedisKeyUtil.getFolloweeKey(entityType, entityId);
         return getIdsFromSet(jedisAdapter.zrevrange(followeeKey, 0, count));
@@ -78,7 +78,7 @@ public class FollowService {
         String followerKey = RedisKeyUtil.getFollowerKey(entityType, entityId);
         return jedisAdapter.zcard(followerKey);
     }
-
+    //判断是否为粉丝
     public boolean isFollower(int userId, int entityType, int entityId) {
         String followerKey = RedisKeyUtil.getFollowerKey(entityType, entityId);
         return jedisAdapter.zscore(followerKey, String.valueOf(userId)) != null;

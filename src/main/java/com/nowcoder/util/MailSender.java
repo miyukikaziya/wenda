@@ -45,6 +45,7 @@ public class MailSender implements InitializingBean {
         }
     }
 
+    //自己设置
     @Override
     public void afterPropertiesSet() throws Exception {
         mailSender = new JavaMailSenderImpl();

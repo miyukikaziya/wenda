@@ -3,7 +3,7 @@ package com.nowcoder.model;
 import com.alibaba.fastjson.JSONObject;
 
 import java.util.Date;
-
+//新鲜事
 public class Feed {
     private int id;
     private int type;

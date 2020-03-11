@@ -34,16 +34,16 @@
                     #if ($followed)
                     <button class="follow-button zg-follow zg-btn-white js-follow-question" data-id="${question.id}"
                             data-status="1">
-                        取消关注
+                        取消点赞
                     </button>
                     #else
                     <button class="follow-button zg-follow zg-btn-green js-follow-question" data-id="${question.id}">
-                        关注问题
+                        为我点赞
                     </button>
                     #end
                     <div class="zh-question-followers-sidebar">
                         <div class="zg-gray-normal">
-                            <a href="javascript:void(0);"><strong class="js-user-count">${followUsers.size()}</strong></a>人关注该问题
+                            <a href="javascript:void(0);"><strong class="js-user-count">${followUsers.size()}</strong></a>人点赞
                         </div>
                         <div class="list zu-small-avatar-list zg-clear js-user-list">
                             #foreach($vo in $followUsers)
@@ -110,7 +110,7 @@
                         <div class="zm-meta-panel">
                             <a itemprop="url" class="answer-data-link meta-item" target="_blank" href="">发布于 $date.format('yyyy-MM-dd HH:mm:ss', $comment.comment.createdDate)</a>
                             <a href="" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
-                                <i class="z-icon-comment"></i>4 条评论</a>
+                                <i class="z-icon-comment"></i>(*^▽^*))</a>
 
                             <button class="item-collapse js-collapse" style="transition: none;">
                                 <i class="z-icon-fold"></i>收起</button>
@@ -133,7 +133,7 @@
 
                     <div class="zm-command clearfix">
                             <span class=" zg-right">
-                                <button type="submit" class="submit-button zg-btn-blue">发布回答</button></span>
+                                <button type="submit" class="submit-button zg-btn-blue">发表评论</button></span>
                     </div>
                 </div>
             </div>

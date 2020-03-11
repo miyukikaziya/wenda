@@ -2,47 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="576c5a3b-01a8-4a05-bab4-cadd65481fe9" name="Default Changelist" comment="0310 finish">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcoder/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcoder/interceptor/LoginRequredInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/interceptor/LoginRequredInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcoder/interceptor/PassportInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/interceptor/PassportInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/aspect/LogAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/aspect/LogAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/async/EventConsumer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/async/EventConsumer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/async/EventConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/async/EventConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/async/EventProducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/async/EventProducer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/async/handler/FeedHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/async/handler/FeedHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/async/handler/FollowHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/async/handler/FollowHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/CommentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/FeedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/FeedController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/FollowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/FollowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/MessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/QuestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/controller/QuestionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/interceptor/PassportInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/interceptor/PassportInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/service/FollowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/service/FollowService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/service/LikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/service/LikeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/service/SensitiveService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/service/SensitiveService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/util/JedisAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/util/JedisAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/util/MailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/util/MailSender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nowcoder/util/WendaUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nowcoder/util/WendaUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nowcoder/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nowcoder/Consumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nowcoder/InitDatabaseTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nowcoder/InitDatabaseTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nowcoder/Producer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nowcoder/Producer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nowcoder/ThreadTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nowcoder/ThreadTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nowcoder/ThreadTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nowcoder/ThreadTest$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nowcoder/ThreadTest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nowcoder/ThreadTest$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nowcoder/ThreadTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nowcoder/ThreadTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wenda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wenda.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,38 +299,38 @@
     </state>
     <state x="489" y="120" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1583733085089" />
     <state x="515" y="114" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583935369022" />
-    <state width="1537" height="333" key="GridCell.Tab.0.bottom" timestamp="1583934595036">
+    <state width="1537" height="467" key="GridCell.Tab.0.bottom" timestamp="1583944156816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="333" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583934595036" />
-    <state width="1537" height="333" key="GridCell.Tab.0.center" timestamp="1583934595036">
+    <state width="1537" height="467" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583944156816" />
+    <state width="1537" height="467" key="GridCell.Tab.0.center" timestamp="1583944156816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="333" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583934595036" />
-    <state width="1537" height="333" key="GridCell.Tab.0.left" timestamp="1583934595035">
+    <state width="1537" height="467" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583944156816" />
+    <state width="1537" height="467" key="GridCell.Tab.0.left" timestamp="1583944156816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="333" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583934595035" />
-    <state width="1537" height="333" key="GridCell.Tab.0.right" timestamp="1583934595036">
+    <state width="1537" height="467" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583944156816" />
+    <state width="1537" height="467" key="GridCell.Tab.0.right" timestamp="1583944156816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="333" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583934595036" />
-    <state width="1537" height="333" key="GridCell.Tab.1.bottom" timestamp="1583934595036">
+    <state width="1537" height="467" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583944156816" />
+    <state width="1537" height="467" key="GridCell.Tab.1.bottom" timestamp="1583944156816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="333" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583934595036" />
-    <state width="1537" height="333" key="GridCell.Tab.1.center" timestamp="1583934595036">
+    <state width="1537" height="467" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583944156816" />
+    <state width="1537" height="467" key="GridCell.Tab.1.center" timestamp="1583944156816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="333" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583934595036" />
-    <state width="1537" height="333" key="GridCell.Tab.1.left" timestamp="1583934595036">
+    <state width="1537" height="467" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583944156816" />
+    <state width="1537" height="467" key="GridCell.Tab.1.left" timestamp="1583944156816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="333" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583934595036" />
-    <state width="1537" height="333" key="GridCell.Tab.1.right" timestamp="1583934595036">
+    <state width="1537" height="467" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583944156816" />
+    <state width="1537" height="467" key="GridCell.Tab.1.right" timestamp="1583944156816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="333" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583934595036" />
+    <state width="1537" height="467" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583944156816" />
     <state width="1537" height="270" key="GridCell.Tab.2.bottom" timestamp="1583856281520">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

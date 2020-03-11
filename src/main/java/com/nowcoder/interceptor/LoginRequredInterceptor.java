@@ -14,7 +14,7 @@ public class LoginRequredInterceptor implements HandlerInterceptor {
 
     @Autowired
     HostHolder hostHolder;
-
+    //浏览某页面前必须登录，并把此页面参数保存，登陆成功后返回
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         if (hostHolder.getUser() == null) {

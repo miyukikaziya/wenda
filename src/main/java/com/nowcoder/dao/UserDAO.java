@@ -4,7 +4,7 @@ import com.nowcoder.model.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
-
+//实现对数据库中user表的增删查改
 @Service
 @Mapper
 public interface UserDAO {

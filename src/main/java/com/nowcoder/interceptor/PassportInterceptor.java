@@ -14,7 +14,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
-
+//拦截器：判断用户是谁
 @Component
 public class PassportInterceptor implements HandlerInterceptor {
 
@@ -46,7 +46,7 @@ public class PassportInterceptor implements HandlerInterceptor {
         }
         return true;
     }
-
+    //把user放到渲染之前的上下文中
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
         if(modelAndView != null) {

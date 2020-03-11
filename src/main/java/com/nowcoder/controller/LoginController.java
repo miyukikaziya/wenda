@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
-
+/**
+ * Created by nowcoder on 2016/7/2.
+ * 负责用户登录注册
+ */
 @Controller
 public class LoginController {
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
@@ -27,7 +30,7 @@ public class LoginController {
     @Autowired
     EventProducer eventProducer;
 
-    @RequestMapping(path = {"/reg/"}, method = RequestMethod.POST)
+    @RequestMapping(path = {"/reg/"}, method = RequestMethod.POST)//写入数据，post
     public String register(Model model,
                            @RequestParam("username") String username,
                            @RequestParam("password") String password,
@@ -43,7 +46,7 @@ public class LoginController {
                     return "redirect:" + next;
                 }
                 return "redirect:/";
-            } else {
+            } else {//注册有问题，通过msg显示
                 model.addAttribute("msg", map.get("msg"));
                 return "login";
             }
@@ -52,16 +55,17 @@ public class LoginController {
             return "login";
         }
     }
-
+    //登录界面
     @RequestMapping(path = {"/login/"}, method = RequestMethod.POST)
     public String login(Model model,
                         @RequestParam("username") String username,
                         @RequestParam("password") String password,
-                        @RequestParam(value = "next", required = false) String next,
+                        @RequestParam(value = "next", required = false) String next,//将next参数传入，事前埋藏在html页面中
                         @RequestParam(value = "rememberme", defaultValue = "false") boolean rememberme,
                         HttpServletResponse response) {
         try {
             Map<String, String> map = userService.login(username, password);
+            //把cookie放到浏览器的response中
             if (map.containsKey("ticket")) {
                 Cookie cookie = new Cookie("ticket", map.get("ticket"));
                 cookie.setPath("/");
@@ -75,7 +79,7 @@ public class LoginController {
 //                        .setActorId(Integer.parseInt(map.get("userId"))));
 
                 if (StringUtils.isNotBlank(next)) {
-                    return "redirect:" + next;
+                    return "redirect:" + next;//返回登陆前的页面
                 }
                 return "redirect:/";
             } else {
@@ -93,7 +97,7 @@ public class LoginController {
         model.addAttribute("next", next);
         return "login";
     }
-
+    //登出
     @RequestMapping(path = {"/logout"}, method = RequestMethod.GET)
     public String logout(@CookieValue("ticket") String ticket) {
         userService.logout(ticket);

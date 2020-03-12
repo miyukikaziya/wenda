@@ -27,8 +27,8 @@ public class MailSender implements InitializingBean {
     public boolean sendWithHTMLTemplate(String to, String subject,
                                         String template, Map<String, Object> model) {
         try {
-            String nick = MimeUtility.encodeText("hustlwl");
-            InternetAddress from = new InternetAddress(nick + "<2589656897@qq.com>");
+            String nick = MimeUtility.encodeText("miyuki");
+            InternetAddress from = new InternetAddress(nick + "<1033708754@qq.com>");
             MimeMessage mimeMessage = mailSender.createMimeMessage();
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
             String result = VelocityEngineUtils
@@ -49,16 +49,16 @@ public class MailSender implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         mailSender = new JavaMailSenderImpl();
-        mailSender.setUsername("2589656897@qq.com");
-        mailSender.setPassword("xxx");
-//        mailSender.setHost("smtp.exmail.qq.com");
+        mailSender.setUsername("1033708754@qq.com");
+        mailSender.setPassword("haxlicosbugbbaij");
+ //       mailSender.setHost("smtp.exmail.qq.com");
         mailSender.setHost("smtp.qq.com");
         mailSender.setPort(465);
         mailSender.setProtocol("smtps");
         mailSender.setDefaultEncoding("utf8");
         Properties javaMailProperties = new Properties();
         javaMailProperties.put("mail.smtp.ssl.enable", true);
-        //javaMailProperties.put("mail.smtp.auth", true);
+        javaMailProperties.put("mail.smtp.auth", true);
         //javaMailProperties.put("mail.smtp.starttls.enable", true);
         mailSender.setJavaMailProperties(javaMailProperties);
     }

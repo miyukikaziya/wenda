@@ -37,7 +37,7 @@ public class QuestionController {
     FollowService followService;
 
     //传入title和content两个参数
-    @RequestMapping(value = "/question/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/question/add", method = RequestMethod.POST, produces="application/json; utf-8")
     @ResponseBody
     public String addQuestion(@RequestParam("title") String title,
                               @RequestParam("content") String content) {

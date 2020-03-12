@@ -15,7 +15,7 @@ public class SettingController {
     @Autowired
     WendaService wendaService;
 
-    @RequestMapping(path = {"/setting"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/setting"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     @ResponseBody
     public String setting(HttpSession httpSession) {
         return "Setting OK. " + wendaService.getMessage(1);

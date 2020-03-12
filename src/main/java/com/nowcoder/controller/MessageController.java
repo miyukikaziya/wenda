@@ -34,7 +34,7 @@ public class MessageController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(path = {"/msg/list"}, method = RequestMethod.GET)
+    @RequestMapping(path = {"/msg/list"}, method = RequestMethod.GET, produces="application/json; utf-8")
     public String getConversationList(Model model) {
         if (hostHolder.getUser() == null) {
             return "redirect:/relogin";
@@ -55,7 +55,7 @@ public class MessageController {
         return "letter";
     }
 
-    @RequestMapping(path = {"/msg/detail"}, method = RequestMethod.GET)
+    @RequestMapping(path = {"/msg/detail"}, method = RequestMethod.GET, produces="application/json; utf-8")
     public String getConversationDetail(Model model,
                                         @RequestParam("conversationId") String conversationId) {
         try {
@@ -76,7 +76,7 @@ public class MessageController {
         return "letterDetail";
     }
 
-    @RequestMapping(path = {"/msg/addMessage"}, method = RequestMethod.POST)
+    @RequestMapping(path = {"/msg/addMessage"}, method = RequestMethod.POST, produces="application/json; utf-8")
     @ResponseBody
     public String addMessage(@RequestParam("toName") String toName,
                              @RequestParam("content") String content) {

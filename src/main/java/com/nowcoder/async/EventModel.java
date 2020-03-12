@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class EventModel {
     private EventType type;
-    private int actorId;
-    private int entityType;//触发对象
-    private int entityId;
-    private int entityOwnerId;//触发对象相关的用户
+    private int actorId;//评论者
+    private int entityType;//触发对象，评论
+    private int entityId;//评论ID
+    private int entityOwnerId;//触发对象相关的用户，发问题者
 
     private Map<String, String> exts = new HashMap<>();
 
@@ -82,4 +82,14 @@ public class EventModel {
         this.exts = exts;
         return this;
     }
+    /*
+    public String toString() {
+        return "{\"type\":\"" + type
+                + "\", \"actorId\":\"" + actorId
+                + "\", \"entityType\":\"" + entityType
+                + "\", \"entityId\":\"" + entityId
+                + "\", \"entityOwnerId\":\"" + entityOwnerId
+                + "\"}";
+    }
+    */
 }

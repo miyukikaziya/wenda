@@ -1,6 +1,8 @@
 package com.nowcoder.controller;
 
+import com.nowcoder.async.EventModel;
 import com.nowcoder.async.EventProducer;
+import com.nowcoder.async.EventType;
 import com.nowcoder.service.UserService;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -30,7 +32,7 @@ public class LoginController {
     @Autowired
     EventProducer eventProducer;
 
-    @RequestMapping(path = {"/reg/"}, method = RequestMethod.POST)//写入数据，post
+    @RequestMapping(path = {"/reg/"}, method = RequestMethod.POST, produces="application/json; utf-8")//写入数据，post
     public String register(Model model,
                            @RequestParam("username") String username,
                            @RequestParam("password") String password,
@@ -56,7 +58,7 @@ public class LoginController {
         }
     }
     //登录界面
-    @RequestMapping(path = {"/login/"}, method = RequestMethod.POST)
+    @RequestMapping(path = {"/login/"}, method = RequestMethod.POST, produces="application/json; utf-8")
     public String login(Model model,
                         @RequestParam("username") String username,
                         @RequestParam("password") String password,
@@ -73,10 +75,12 @@ public class LoginController {
                     cookie.setMaxAge(3600 * 24 * 5);
                 }
                 response.addCookie(cookie);
-
-//                eventProducer.fireEvent(new EventModel(EventType.LOGIN)
-//                        .setExt("username", username).setExt("email", "hzcforever@163.com")
-//                        .setActorId(Integer.parseInt(map.get("userId"))));
+                try{
+                    eventProducer.fireEvent(new EventModel(EventType.LOGIN)
+                            .setExt("username", "zhangxue").setExt("email", "zx201353440@163.com"));
+                }catch (Exception e){
+                    logger.error("创建email失败！"+e.getMessage());
+                }
 
                 if (StringUtils.isNotBlank(next)) {
                     return "redirect:" + next;//返回登陆前的页面
@@ -92,13 +96,13 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(path = {"/relogin"}, method = RequestMethod.GET)
+    @RequestMapping(path = {"/relogin"}, method = RequestMethod.GET, produces="application/json; utf-8")
     public String relogin(Model model, @RequestParam(value = "next", defaultValue = "", required = false) String next) {
         model.addAttribute("next", next);
         return "login";
     }
     //登出
-    @RequestMapping(path = {"/logout"}, method = RequestMethod.GET)
+    @RequestMapping(path = {"/logout"}, method = RequestMethod.GET, produces="application/json; utf-8")
     public String logout(@CookieValue("ticket") String ticket) {
         userService.logout(ticket);
         return "redirect:/";

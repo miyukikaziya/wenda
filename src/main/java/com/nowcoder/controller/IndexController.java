@@ -26,14 +26,14 @@ public class IndexController {
     @Autowired
     WendaService wendaService;
 
-    @RequestMapping(path = {"/", "/index"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/", "/index"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     @ResponseBody
     public String index(HttpSession httpSession) {
         logger.info("VISIT HOME");
         return wendaService.getMessage(2) + "Hello NowCoder" + httpSession.getAttribute("msg");
     }
 
-    @RequestMapping(path = {"/profile/{groupId}/{userId}"})
+    @RequestMapping(path = {"/profile/{groupId}/{userId}"}, produces="application/json; utf-8")
     @ResponseBody
     public String profile(@PathVariable("userId") int userId,
                           @PathVariable("groupId") String groupId,
@@ -42,7 +42,7 @@ public class IndexController {
         return String.format("Profile Page of %s / %d, t:%d k: %s", groupId, userId, type, key);
     }
 
-    @RequestMapping(path = {"/vm"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/vm"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     public String template(Model model) {
         model.addAttribute("value1", "vvvvv1");
         List<String> colors = Arrays.asList(new String[]{"RED", "GREEN", "BLUE"});
@@ -57,7 +57,7 @@ public class IndexController {
         return "home";
     }
 
-    @RequestMapping(path = {"/request"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/request"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     @ResponseBody
     public String request(Model model, HttpServletResponse response,
                            HttpServletRequest request,
@@ -86,7 +86,7 @@ public class IndexController {
         return sb.toString();
     }
 
-    @RequestMapping(path = {"/redirect/{code}"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/redirect/{code}"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     public RedirectView redirect(@PathVariable("code") int code,
                                  HttpSession httpSession) {
         httpSession.setAttribute("msg", "jump from redirect");
@@ -97,7 +97,7 @@ public class IndexController {
         return  red;
     }
 
-    @RequestMapping(path = {"/admin"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/admin"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     @ResponseBody
     public String admin(@RequestParam("key") String key) {
         if ("admin".equals(key)) {

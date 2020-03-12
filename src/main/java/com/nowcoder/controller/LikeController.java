@@ -34,7 +34,7 @@ public class LikeController {
     @Autowired
     CommentService commentService;
 
-    @RequestMapping(path = {"/like"}, method = RequestMethod.POST)
+    @RequestMapping(path = {"/like"}, method = RequestMethod.POST, produces="application/json; utf-8")
     @ResponseBody
     public String like(@RequestParam("commentId") int commentId) {
         if (hostHolder.getUser() == null) {
@@ -53,7 +53,7 @@ public class LikeController {
         return WendaUtil.getJSONString(0, String.valueOf(likeCount));
     }
 
-    @RequestMapping(path = {"/dislike"}, method = RequestMethod.POST)
+    @RequestMapping(path = {"/dislike"}, method = RequestMethod.POST, produces="application/json; utf-8")
     @ResponseBody
     public String dislike(@RequestParam("commentId") int commentId) {
         if (hostHolder.getUser() == null) {

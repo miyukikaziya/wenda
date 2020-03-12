@@ -43,7 +43,7 @@ public class FollowController {
     @Autowired
     CommentService commentService;
 
-    @RequestMapping(path = "/followUser", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(path = "/followUser", method = {RequestMethod.POST, RequestMethod.GET}, produces="application/json; utf-8")
     @ResponseBody
     public String follow(@RequestParam("userId") int userId) {
         if (hostHolder.getUser() == null) {
@@ -57,7 +57,7 @@ public class FollowController {
                 followService.getFolloweeCount(hostHolder.getUser().getId(), EntityType.ENTITY_USER)));
     }
 
-    @RequestMapping(path = "/unfollowUser", method = RequestMethod.POST)
+    @RequestMapping(path = "/unfollowUser", method = RequestMethod.POST, produces="application/json; utf-8")
     @ResponseBody
     public String unfollow(@RequestParam("userId") int userId) {
         if (hostHolder.getUser() == null) {
@@ -71,7 +71,7 @@ public class FollowController {
                 followService.getFolloweeCount(hostHolder.getUser().getId(), EntityType.ENTITY_USER)));
     }
 
-    @RequestMapping(path = {"/followQuestion"}, method = {RequestMethod.POST})
+    @RequestMapping(path = {"/followQuestion"}, method = {RequestMethod.POST}, produces="application/json; utf-8")
     @ResponseBody
     public String followQuestion(@RequestParam("questionId") int questionId) {
         if (hostHolder.getUser() == null) {
@@ -97,7 +97,7 @@ public class FollowController {
         return WendaUtil.getJSONString(ret ? 0 : 1, info);
     }
 
-    @RequestMapping(path = {"/unfollowQuestion"}, method = {RequestMethod.POST})
+    @RequestMapping(path = {"/unfollowQuestion"}, method = {RequestMethod.POST}, produces="application/json; utf-8")
     @ResponseBody
     public String unfollowQuestion(@RequestParam("questionId") int questionId) {
         if (hostHolder.getUser() == null) {
@@ -121,7 +121,7 @@ public class FollowController {
         return WendaUtil.getJSONString(ret ? 0 : 1, info);
     }
 
-    @RequestMapping(path = {"/user/{uid}/followers"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/user/{uid}/followers"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     public String followers(Model model, @PathVariable("uid") int userId) {
         List<Integer> followerIds = followService.getFollowers(EntityType.ENTITY_USER, userId, 0, 10);
         if (hostHolder.getUser() != null) {
@@ -134,7 +134,7 @@ public class FollowController {
         return "followers";
     }
 
-    @RequestMapping(path = {"/user/{uid}/followees"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/user/{uid}/followees"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     public String followees(Model model, @PathVariable("uid") int userId) {
         List<Integer> followeeIds = followService.getFollowees(userId, EntityType.ENTITY_USER, 0, 10);
 

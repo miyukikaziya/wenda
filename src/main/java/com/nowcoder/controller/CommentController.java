@@ -29,7 +29,7 @@ public class CommentController {
     @Autowired
     QuestionService questionService;
 
-    @RequestMapping(path = {"/addComment"}, method = RequestMethod.POST)
+    @RequestMapping(path = {"/addComment"}, method = RequestMethod.POST, produces="application/json; utf-8")
     public String addComment(@RequestParam("questionId") int questionId,
                              @RequestParam("content") String content) {
         try {

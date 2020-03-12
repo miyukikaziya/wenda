@@ -30,7 +30,7 @@ public class FeedController {
     @Autowired
     JedisAdapter jedisAdapter;
     //拉模式
-    @RequestMapping(path = {"/pullfeeds"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/pullfeeds"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     private String getPullFeeds(Model model) {
         int localUserId = hostHolder.getUser() == null ? 0 : hostHolder.getUser().getId();
         List<Integer> followees = new ArrayList<>();
@@ -42,7 +42,7 @@ public class FeedController {
         return "feeds";
     }
     //推模式
-    @RequestMapping(path = {"/pushfeeds"}, method = {RequestMethod.GET})
+    @RequestMapping(path = {"/pushfeeds"}, method = {RequestMethod.GET}, produces="application/json; utf-8")
     private String getPushFeeds(Model model) {
         int localUserId = hostHolder.getUser() == null ? 0 : hostHolder.getUser().getId();
         List<String> feedIds = jedisAdapter.lrange(RedisKeyUtil.getTimelineKey(localUserId), 0, 10);

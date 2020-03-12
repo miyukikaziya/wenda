@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//分发事件给各个handler list
 @Service
 public class EventConsumer implements InitializingBean, ApplicationContextAware {
 
@@ -51,9 +52,27 @@ public class EventConsumer implements InitializingBean, ApplicationContextAware 
                 String key = RedisKeyUtil.getEventQueueKey();
                 List<String> events = jedisAdapter.brpop(0, key);
                 for (String message : events) {
-                    if (!message.equals(key)) {
+                    if (message.equals(key)) {
                         continue;
                     }
+                    /*
+                    System.out.println("45Key-------------"+key);
+                    User user = new User();
+                    user.setName("xx");
+                    user.setPassword("ppp");
+                    user.setHeadUrl("a.png");
+                    user.setSalt("salt");
+                    user.setId(1);
+                    System.out.println("46-------------" + JSONObject.toJSONString(user));//user序列化
+                    EventModel event = new EventModel();
+                    event.setActorId(1);
+                    event.setEntityId(2);
+                    event.setEntityOwnerId(3);
+                    event.setEntityType(6);
+                    event.setType(COMMENT);
+                    System.out.println("47-------------" + JSONObject.toJSONString(event));//user序列化
+                    */
+                    //System.out.println("48message-------------"+message);
                     EventModel eventModel = JSON.parseObject(message, EventModel.class);//反序列化
                     if (!config.containsKey(eventModel.getType())) {
                         logger.error("不能识别的事件");
@@ -62,6 +81,7 @@ public class EventConsumer implements InitializingBean, ApplicationContextAware 
                     for (EventHandler handler : config.get(eventModel.getType())) {
                         handler.doHandler(eventModel);
                     }
+
                 }
             }
         });

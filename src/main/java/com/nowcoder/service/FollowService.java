@@ -48,12 +48,12 @@ public class FollowService {
         }
         return Ids;
     }
-    //关注者
+    //关注者列表
     public List<Integer> getFollowers(int entityType, int entityId, int count) {
         String followerKey = RedisKeyUtil.getFollowerKey(entityType, entityId);
         return getIdsFromSet(jedisAdapter.zrevrange(followerKey, 0, count));
     }
-
+    //关注者列表
     public List<Integer> getFollowers(int entityType, int entityId, int offset, int count) {
         String followerKey = RedisKeyUtil.getFollowerKey(entityType, entityId);
         return getIdsFromSet(jedisAdapter.zrevrange(followerKey, offset, offset + count));
@@ -63,7 +63,7 @@ public class FollowService {
         String followeeKey = RedisKeyUtil.getFolloweeKey(entityType, entityId);
         return getIdsFromSet(jedisAdapter.zrevrange(followeeKey, 0, count));
     }
-
+    //关注粉丝
     public List<Integer> getFollowees(int entityType, int entityId, int offset, int count) {
         String followeeKey = RedisKeyUtil.getFolloweeKey(entityType, entityId);
         return getIdsFromSet(jedisAdapter.zrevrange(followeeKey, offset, offset + count));
